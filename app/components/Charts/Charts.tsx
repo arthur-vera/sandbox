@@ -5,7 +5,7 @@ const Charts = () => {
   const data = [
     { id: 1, label: "Task 1", percentage: 25 },
     { id: 2, label: "Task 2", percentage: 50 },
-    { id: 3, label: "Task 3", percentage: 75 },
+    { id: 3, label: "Task 3", percentage: 12 },
     { id: 4, label: "Task 4", percentage: 90 },
     { id: 5, label: "Task 5", percentage: 100 },
   ];
