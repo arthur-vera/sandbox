@@ -54,13 +54,15 @@ const ProgressBar = ({ percentage }: ProgressBarProps) => {
 
   return (
     <div>
-      <p className="">{displayedPercentage}%</p>
       <div
         className={`relative progressBar w-50 h-10 ${bgBarContainer} rounded-lg overflow-hidden`}
         style={{
           transition: "background-color 0.5s ease",
         }}
       >
+        <p className="absolute top-1/2 left-3 translate-y-[-50%] z-20 font-bold text-white">
+          {displayedPercentage}%
+        </p>
         <div
           ref={progressBarRef}
           className={`absolute top-0 left-0 h-full ${bgBar} rounded-lg z-10`}
