@@ -19,7 +19,7 @@ const Charts = () => {
       </div>
       {data.map((item) => (
         <div key={item.id} className="grid grid-cols-4 gap-4 mb-8 items-center">
-          <div className="flex items-center justify-center">
+          <div className="relative ">
             <ProgressBar percentage={item.percentage} />
           </div>
           <div className="flex items-center justify-center">
