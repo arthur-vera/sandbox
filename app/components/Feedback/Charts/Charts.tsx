@@ -1,0 +1,34 @@
+import React from "react";
+import ProgressBar from "@/app/components/Feedback/Charts/ProgressBars/ProgressBar";
+import CircularBar from "@/app/components/Feedback/Charts/ProgressBars/CircularBar";
+
+const Charts = () => {
+  const data = [
+    { id: 1, label: "Task 1", percentage: 25 },
+    { id: 2, label: "Task 2", percentage: 45 },
+    { id: 3, label: "Task 3", percentage: 15 },
+    { id: 4, label: "Task 4", percentage: 90 },
+    { id: 5, label: "Task 5", percentage: 100 },
+  ];
+
+  return (
+    <div>
+      <div className="grid grid-cols-4 gap-4 mb-8 items-center">
+        <h3 className="font-bold text-center">Progress bar</h3>
+        <h3 className="font-bold text-center">Circular progress Bar</h3>
+      </div>
+      {data.map((item) => (
+        <div key={item.id} className="grid grid-cols-4 gap-4 mb-8 items-center">
+          <div className="flex items-center justify-center">
+            <ProgressBar percentage={item.percentage} />
+          </div>
+          <div className="flex items-center justify-center">
+            <CircularBar percentage={item.percentage} />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Charts;

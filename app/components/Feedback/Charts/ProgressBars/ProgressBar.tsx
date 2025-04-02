@@ -46,7 +46,7 @@ const ProgressBar = ({ percentage }: ProgressBarProps) => {
             },
             onComplete: getBackgroundColor,
           },
-          "-1"
+          0
         );
       }
     }
@@ -55,7 +55,7 @@ const ProgressBar = ({ percentage }: ProgressBarProps) => {
   return (
     <div>
       <div
-        className={`relative progressBar w-50 h-10 ${bgBarContainer} rounded-lg overflow-hidden`}
+        className={`relative progressBar w-full h-10 ${bgBarContainer} rounded-lg overflow-hidden`}
         style={{
           transition: "background-color 0.5s ease",
         }}
