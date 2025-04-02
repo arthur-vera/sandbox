@@ -52,7 +52,7 @@ const CircularBar = ({
           onUpdate: function () {
             setDisplayedPercentage(Math.round(this.targets()[0].value));
           },
-          onComplete: getCircleStrokeColor,
+          onStart: getCircleStrokeColor,
         }
       ),
         0;
