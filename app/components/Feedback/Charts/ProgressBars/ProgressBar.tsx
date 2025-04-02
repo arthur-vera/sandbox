@@ -21,7 +21,7 @@ const ProgressBar = ({ percentage }: ProgressBarProps) => {
       setBgBar("bg-orange-500");
       setBgBarContainer("bg-orange-200");
     } else {
-      setBgBar("bg-green-500");
+      setBgBar("bg-green-400");
       setBgBarContainer("bg-green-200");
     }
   };
@@ -44,7 +44,7 @@ const ProgressBar = ({ percentage }: ProgressBarProps) => {
             onUpdate: function () {
               setDisplayedPercentage(Math.round(this.targets()[0].value));
             },
-            onComplete: getBackgroundColor,
+            onStart: getBackgroundColor,
           },
           0
         );
