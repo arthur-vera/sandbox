@@ -13,7 +13,7 @@ import {
 import { FaEye } from "react-icons/fa";
 
 interface FeedBackModuleProps {
-  slug: string;
+  slug?: string;
 }
 
 const FeedBackModule = ({ slug }: FeedBackModuleProps) => {
