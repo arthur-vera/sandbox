@@ -7,8 +7,8 @@ interface PageProps {
   };
 }
 
-const page = ({ params }: PageProps) => {
-  const { slug } = params;
+const page = async ({ params }: PageProps) => {
+  const { slug } = await params;
   console.log("slug", slug);
   return <FeedBackModule slug={slug} />;
 };
