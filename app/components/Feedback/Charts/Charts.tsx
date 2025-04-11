@@ -1,6 +1,10 @@
+"use client";
+
 import React from "react";
 import ProgressBar from "@/app/components/Feedback/Charts/ProgressBars/ProgressBar";
 import CircularBar from "@/app/components/Feedback/Charts/ProgressBars/CircularBar";
+import SegmentedBar from "@/app/components/Feedback/Charts/ProgressBars/SegmentedBar";
+import SemiCircularGauge from "./ProgressBars/GaugeBar";
 
 const Charts = () => {
   const data = [
@@ -24,6 +28,17 @@ const Charts = () => {
           </div>
           <div className="flex items-center justify-center">
             <CircularBar percentage={item.percentage} />
+          </div>
+          <div>
+            <SegmentedBar percentage={item.percentage} />
+          </div>
+          <div>
+            <SemiCircularGauge
+              percentage={item.percentage}
+              size={100}
+              strokeWidth={10}
+              color="#3b82f6"
+            />
           </div>
         </div>
       ))}

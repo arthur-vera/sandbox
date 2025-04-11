@@ -7,60 +7,55 @@ interface CircularBarProps {
   percentage: number;
   size?: number;
   strokeWidth?: number;
+  targetScore?: number;
 }
 
 const CircularBar = ({
   percentage,
-  size = 100,
-  strokeWidth = 10,
+  size = 150,
+  strokeWidth = 30,
+  targetScore = 80,
 }: CircularBarProps) => {
   const circleRef = useRef<SVGCircleElement>(null);
-  const [displayedPercentage, setDisplayedPercentage] = useState(0);
-  const [circleStroke, setCircleStroke] = useState("#6b7280");
-  const [circleStrokeBg, setCircleStrokeBg] = useState("#e5e7eb");
+
+  // Initialisation des couleurs en fonction de la valeur de `percentage`
+  const [circleStroke, setCircleStroke] = useState(
+    percentage < targetScore
+      ? "var(--color-feedback-progress)"
+      : "var(--color-feedback-success)"
+  );
+  const [circleStrokeBg, setCircleStrokeBg] = useState(
+    percentage < targetScore
+      ? "rgba(150, 196, 224, 0.5)"
+      : "rgba(140, 192, 132, 0.5)"
+  );
 
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
 
   const getCircleStrokeColor = () => {
-    if (percentage <= 40) {
-      setCircleStroke("#ef4444");
-      setCircleStrokeBg("#fca5a1");
-    } else if (percentage <= 60) {
-      setCircleStroke("#f97316");
-      setCircleStrokeBg("#fdba74");
+    if (percentage < targetScore) {
+      setCircleStroke("var(--color-feedback-progress)");
+      setCircleStrokeBg("rgba(150, 196, 224, 0.5)");
     } else {
-      setCircleStroke("#22c55e");
-      setCircleStrokeBg("#86efac");
+      setCircleStroke("var(--color-feedback-success)");
+      setCircleStrokeBg("rgba(140, 192, 132, 0.5)");
     }
   };
 
   useEffect(() => {
     if (circleRef.current) {
+      getCircleStrokeColor();
       gsap.to(circleRef.current, {
         strokeDashoffset: circumference - (percentage / 100) * circumference,
         duration: 2,
         ease: "elastic.out(.5, 0.3)",
       });
-
-      gsap.to(
-        { value: displayedPercentage },
-        {
-          value: percentage,
-          duration: 2,
-          ease: "power1.out",
-          onUpdate: function () {
-            setDisplayedPercentage(Math.round(this.targets()[0].value));
-          },
-          onStart: getCircleStrokeColor,
-        }
-      ),
-        0;
     }
   }, [percentage, circumference]);
 
   return (
-    <div className=" relative w-fit ">
+    <div className="relative w-fit">
       <svg width={size} height={size} className="transform -rotate-90">
         <circle
           cx={size / 2}
@@ -87,9 +82,6 @@ const CircularBar = ({
           }}
         />
       </svg>
-      <span className="text-lg font-bold absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10">
-        {displayedPercentage}%
-      </span>
     </div>
   );
 };

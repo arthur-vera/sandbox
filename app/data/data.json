@@ -1,50 +1,27 @@
-[
-  {
-    "id": 1,
-    "title": "Expliquer les facteurs qui influencent l'autonomie du véhicule",
-    "percentage": 85,
-    "feedback": "Ta mention du freinage régénératif et de l'impact de la montagne est très pertinente. Continue à approfondir ce sujet pour rassurer nos clients."
-  },
-  {
-    "id": 2,
-    "title": "Expliquer comment le véhicule gère la recharge sur de longs trajets",
-    "percentage": 60,
-    "feedback": "Bien que tu aies évoqué des préoccupations sur les arrêts, tu pourrais préciser le nombre de recharges estimées et comment le système anticipe ces arrêts."
-  },
-  {
-    "id": 3,
-    "title": "Faire le lien avec le contexte du client",
-    "percentage": 100,
-    "feedback": "Tu as bien intégré les préoccupations de David concernant le long trajet et la montagne. C'est un point fort de ta réponse !"
-  },
-  {
-    "id": 4,
-    "title": "Utiliser un vocabulaire adapté au niveau de son client",
-    "percentage": 60,
-    "feedback": "Ton vocabulaire est adapté, mais tu pourrais intégrer quelques termes techniques pour renforcer ta crédibilité, surtout si le client est un peu plus expert."
-  },
-  {
-    "id": 5,
-    "title": "Expliquer les facteurs qui influencent l'autonomie du véhicule",
-    "percentage": 40,
-    "feedback": "Bien que tu aies mentionné le freinage régénératif, il serait utile d'expliquer davantage comment cela impacte l'autonomie."
-  },
-  {
-    "id": 6,
-    "title": "Expliquer comment le véhicule gère la recharge sur de longs trajets",
-    "percentage": 30,
-    "feedback": "Il manque des détails sur la gestion des arrêts de recharge. Essaie d'être plus précis sur le nombre d'arrêts et leur durée."
-  },
-  {
-    "id": 7,
-    "title": "Faire le lien avec le contexte du client",
-    "percentage": 20,
-    "feedback": "Tu n'as pas suffisamment lié ta réponse aux préoccupations spécifiques de David. Essaie de personnaliser davantage ton discours."
-  },
-  {
-    "id": 8,
-    "title": "Utiliser un vocabulaire adapté au niveau de son client",
-    "percentage": 10,
-    "feedback": "Le vocabulaire utilisé est trop technique pour un client lambda. Essaie d'utiliser des termes plus simples et accessibles."
-  }
-]
+{
+  "overallScore": 80,
+  "overallFeedback": "Strong skills overall with some room for improvement on key aspects.",
+  "details": [
+    {
+      "title": "Understanding",
+      "score": 80,
+      "comment": "You clearly identified the key points and showed a good grasp of the topic."
+    },
+    {
+      "title": "Clarity",
+      "score": 70,
+      "comment": "Your communication is mostly clear, but some parts could be phrased more effectively."
+    },
+    {
+      "title": "Examples",
+      "score": 65,
+      "comment": "Your examples are mostly relevant, though a few could be stronger or more specific."
+    },
+    {
+      "title": "Critical Thinking",
+      "score": 73,
+      "comment": "Good analysis overall, but there's room to deepen your arguments further."
+    }
+  ],
+  "solution": "The solution is well-structured and addresses the problem effectively. However, there are some areas where you could improve your approach. For example, consider providing more detailed explanations for your reasoning and including additional examples to support your points. Overall, a solid effort with room for enhancement."
+}

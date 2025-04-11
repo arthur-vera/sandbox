@@ -1,6 +1,7 @@
 import data from "@/app/data/data.json";
+import { FeedbackData } from "@/app/types/feedback";
 
-export const getData = async () => {
+export const getData = async (): Promise<FeedbackData | {}> => {
   try {
     return Promise.resolve(data);
   } catch (error) {

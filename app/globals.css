@@ -10,6 +10,25 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-feedback-success: #8cc084;
+  --color-feedback-success-rgba: "rgba(140, 192, 132, 0.5)";
+  --color-feedback-progress: #60a5fa;
+  --color-feedback-progress-rgba: "rgba(150, 196, 224, 0.5)";
+  --color-feedback-dark: #1a1f2c;
+  --color-feedback-darkgray: #2d3142;
+  --color-feedback-lightgray: #667085;
+  --color-black-vup: #202020;
+}
+
+@layer utilities {
+  .feedback-card-success {
+    @apply rounded-xl bg-gradient-to-r from-feedback-success/20 to-feedback-success/5 border-feedback-success/30 p-8 border shadow-xl backdrop-blur-lg text-white;
+  }
+
+  .feedback-card-progress {
+    @apply rounded-xl bg-gradient-to-r from-feedback-progress/20 to-feedback-progress/5 border-feedback-progress/30 p-8 border shadow-xl backdrop-blur-lg text-white;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
