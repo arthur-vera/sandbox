@@ -1,18 +1,11 @@
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "lenis";
 
-// const splitText = (text: string) => {
-//   const letters = text.split("").map((char) => {
-//     if (char === " ") {
-//       return `<span style="display: inline-block;">&nbsp</span>`;
-//     }
-//     return `<span style="display: inline-block;">${char}</span>`;
-//   });
-//   return letters.join("");
-// };
+gsap.registerPlugin(ScrollTrigger);
 
 export const feedbackIntroAnimation = (
   circularBarIntro: HTMLElement,
-  textIntro: HTMLParagraphElement,
   onComplete?: () => void
 ) => {
   const tl = gsap.timeline({
@@ -24,48 +17,7 @@ export const feedbackIntroAnimation = (
     opacity: 0,
     duration: 0.5,
     ease: "power2.out",
-  })
-    .fromTo(
-      textIntro,
-      {
-        opacity: 0,
-        filter: "blur(10px)",
-        y: 50,
-      },
-      {
-        opacity: 1,
-        filter: "blur(0px)",
-        y: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        stagger: {
-          amount: 1,
-          from: "random",
-        },
-      },
-      "+=0.2"
-    )
-    .to(
-      circularBarIntro,
-      {
-        y: 50,
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out",
-      },
-      "+=1.3"
-    )
-    .to(
-      textIntro,
-      {
-        opacity: 0,
-        filter: "blur(10px)",
-        y: 50,
-        duration: 0.5,
-        ease: "power2.out",
-      },
-      "<"
-    );
+  });
 };
 
 export const fullFeedbackAnimation = (
@@ -154,4 +106,87 @@ export const displaySolutionAnimation = (
   );
 
   return tl;
+};
+
+/**
+ * Smooth scroll initialization (optional)
+ */
+export const initializeSmoothScroll = () => {
+  const lenis = new Lenis({
+    autoRaf: true,
+  });
+  return lenis;
+};
+
+/**
+ * Fade out an element when scrolling
+ * @param selector - The CSS selector of the element to fade out
+ * @param triggerSelector - The CSS selector of the trigger element
+ */
+export const fadeOutOnScroll = (
+  selector: HTMLParagraphElement,
+  triggerSelector: HTMLParagraphElement
+) => {
+  gsap.to(selector, {
+    autoAlpha: 0,
+    duration: 0.2,
+    scrollTrigger: {
+      trigger: triggerSelector,
+      start: "top top",
+      end: "top top-=1",
+      toggleActions: "play none reverse none",
+    },
+  });
+};
+
+/**
+ * Pin a container during scrolling
+ * @param pinSelector - The CSS selector of the element to pin
+ * @param containerSelector - The CSS selector of the container to pin
+ */
+export const createPinScrollEffect = (
+  pinSelector: HTMLElement,
+  containerSelector: HTMLElement
+) => {
+  ScrollTrigger.create({
+    trigger: pinSelector,
+    start: "top top",
+    end: "bottom bottom",
+    pin: containerSelector,
+  });
+};
+
+/**
+ * Animate rotation of elements during scrolling
+ * @param elementsSelector - The CSS selector of the elements to animate
+ * @param triggerSelector - The CSS selector of the trigger element
+ * @param startRotation - The starting rotation angle
+ * @param endRotation - The ending rotation angle
+ * @param stagger - The delay between animations of each element
+ */
+export const animateRotationOnScroll = (
+  elementsSelector: NodeList,
+  triggerSelector: HTMLElement,
+  startRotation: number,
+  endRotation: number,
+  stagger: number
+) => {
+  gsap.fromTo(
+    elementsSelector,
+    {
+      rotation: startRotation,
+    },
+    {
+      rotation: endRotation,
+      ease: "power2.inOut",
+      stagger: stagger,
+      scrollTrigger: {
+        trigger: triggerSelector,
+        start: "top bottom",
+        end: "bottom bottom",
+        scrub: true,
+        markers: true,
+      },
+    }
+  );
 };
