@@ -29,6 +29,10 @@
   .feedback-card-progress {
     @apply rounded-xl bg-gradient-to-r from-feedback-progress/20 to-feedback-progress/5 border-feedback-progress/30  border shadow-xl backdrop-blur-lg text-white;
   }
+
+  .feedback-card-neutral {
+    @apply rounded-xl bg-gradient-to-r from-white/10 to-white/5 border-white/20 border shadow-xl backdrop-blur-lg text-white;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

@@ -52,9 +52,11 @@ const TextBlurAppearAnimation = ({
           className="flex items-center justify-center w-full bg-black/20 border border-white/10 rounded-full p-2 mb-6 text-sm md:text-lg text-center"
           ref={topicRef}
         >
-          <span className="text-md text-white/50 font-bold">{introText}</span>
+          <span className="text-sm md:text-base text-white/50 font-bold">
+            {introText}
+          </span>
         </div>
-        <p className="text-white text-2xl text-center" ref={textRef}>
+        <p className="text-white text-xl md:text-2xl text-center" ref={textRef}>
           {mainText}
         </p>
         <p

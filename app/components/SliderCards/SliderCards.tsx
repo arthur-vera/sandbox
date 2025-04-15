@@ -79,12 +79,6 @@ const SliderCards = ({ data }: SliderCardsProps) => {
 
   return (
     <section className="mwg_effect007 relative bg-black-vup text-[#F1F1F1] font-inter">
-      {/* <p
-        className="scroll fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-        ref={scrollRef}
-      >
-        Scroll
-      </p> */}
       <div className="pin-height h-[400vh]" ref={pinHeight}>
         <div
           className=" relative h-screen w-full overflow-hidden "

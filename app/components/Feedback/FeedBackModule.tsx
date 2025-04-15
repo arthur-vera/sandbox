@@ -14,7 +14,6 @@ import { FaEye } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa";
 
 interface FeedBackModuleProps {
-  slug?: string;
   data: FeedbackData;
 }
 
@@ -54,7 +53,9 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
       circularBarIntro.current as HTMLElement,
 
       () => {
-        setIntroDone(false);
+        setTimeout(() => {
+          setIntroDone(true);
+        }, 2000);
       }
     );
   }, []);
@@ -67,18 +68,18 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
         circularBar.current!,
         globalFeedback.current!,
         solution.current!
-      ).play();
+      );
     }
   }, [introDone]);
 
   return (
     <>
-      <div className="min-h-screen flex flex-col  bg-black-vup relative">
+      <div className="min-h-screen flex flex-col bg-black-vup relative">
         {introDone ? (
           <div
             className={`${
               validate ? "feedback-card-success" : "feedback-card-progress"
-            } global-wrapper w-full max-w-[1000px] m-auto`}
+            } global-wrapper w-full max-w-[1000px] m-auto p-6`}
             ref={globalWrapper}
             style={{
               visibility: "hidden",

@@ -37,5 +37,11 @@ export default function Home() {
     solution:
       "The solution is well-structured and addresses the problem effectively. However, there are some areas where you could improve your approach. For example, consider providing more detailed explanations for your reasoning and including additional examples to support your points. Overall, a solid effort with room for enhancement.",
   };
-  return <FeedBackModulePlus data={data} />;
+
+  return (
+    <div className="flex flex-col">
+      <Link href={"/charts-list"}>Chart list</Link>
+      <Link href={"/feedback-module-plus"}>Scrool version</Link>
+    </div>
+  );
 }

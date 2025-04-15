@@ -108,9 +108,6 @@ export const displaySolutionAnimation = (
   return tl;
 };
 
-/**
- * Smooth scroll initialization (optional)
- */
 export const initializeSmoothScroll = () => {
   const lenis = new Lenis({
     autoRaf: true,
@@ -118,11 +115,6 @@ export const initializeSmoothScroll = () => {
   return lenis;
 };
 
-/**
- * Fade out an element when scrolling
- * @param selector - The CSS selector of the element to fade out
- * @param triggerSelector - The CSS selector of the trigger element
- */
 export const fadeOutOnScroll = (
   selector: HTMLParagraphElement,
   triggerSelector: HTMLParagraphElement
@@ -139,11 +131,6 @@ export const fadeOutOnScroll = (
   });
 };
 
-/**
- * Pin a container during scrolling
- * @param pinSelector - The CSS selector of the element to pin
- * @param containerSelector - The CSS selector of the container to pin
- */
 export const createPinScrollEffect = (
   pinSelector: HTMLElement,
   containerSelector: HTMLElement
@@ -156,14 +143,6 @@ export const createPinScrollEffect = (
   });
 };
 
-/**
- * Animate rotation of elements during scrolling
- * @param elementsSelector - The CSS selector of the elements to animate
- * @param triggerSelector - The CSS selector of the trigger element
- * @param startRotation - The starting rotation angle
- * @param endRotation - The ending rotation angle
- * @param stagger - The delay between animations of each element
- */
 export const animateRotationOnScroll = (
   elementsSelector: NodeList,
   triggerSelector: HTMLElement,
@@ -185,7 +164,6 @@ export const animateRotationOnScroll = (
         start: "top bottom",
         end: "bottom bottom",
         scrub: true,
-        markers: true,
       },
     }
   );
