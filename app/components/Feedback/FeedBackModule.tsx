@@ -156,9 +156,6 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
                 size={300}
                 strokeWidth={60}
               />
-              <div>
-                <FaChevronDown className="absolute bottom-0 left-1/2 -translate-x-1/2 text-white w-2" />
-              </div>
             </div>
           </div>
         )}

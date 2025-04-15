@@ -24,9 +24,9 @@ const Solution = ({ data }: SolutionProps) => {
     <div
       className={`${
         solutionVisible
-          ? "bg-black/20 p-4 rounded-lg border border-white/10 text-white"
+          ? "bg-black/20 p-6 rounded-lg border border-white/10 text-white"
           : "border border-dashed border-white p-6 rounded-lg flex justify-center items-center"
-      } max-w-7xl mx-auto w-full mt-9 `}
+      } max-w-7xl mx-auto w-full mt-9 solution`}
       ref={solution}
     >
       {solutionVisible ? (
