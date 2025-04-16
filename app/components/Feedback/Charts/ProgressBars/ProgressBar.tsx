@@ -11,15 +11,15 @@ interface ProgressBarProps {
 const ProgressBar = ({ percentage, targetScore = 80 }: ProgressBarProps) => {
   const progressBarRef = useRef<HTMLDivElement>(null);
   const [bgBar, setBgBar] = useState("bg-gray-500");
-  const [bgBarContainer, setBgBarContainer] = useState("bg-gray-200");
+  const [bgBarContainer, setBgBarContainer] = useState("bg-black-vup/70");
 
   const getBackgroundColor = () => {
     if (percentage < targetScore!) {
       setBgBar("bg-feedback-progress");
-      setBgBarContainer("bg-feedback-progress/50");
+      // setBgBarContainer("bg-feedback-progress/50");
     } else {
       setBgBar("bg-feedback-success");
-      setBgBarContainer("bg-feedback-success/50");
+      // setBgBarContainer("bg-feedback-success/50");
     }
   };
 
