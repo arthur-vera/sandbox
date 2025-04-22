@@ -72,9 +72,9 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
           }}
         >
           <div className="header  ">
-            <h1 className="text-white text-3xl font-bold lg:w-[60%]">
+            <h1 className="text-white text-2xl font-bold lg:w-[60%]">
               <span
-                className="block font-light text-lg text-white/50 mb-2
+                className="block font-light text-sm text-white/50 mb-2
             "
               >
                 Thématique de l'échange
@@ -90,7 +90,7 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
               <ProgressBar percentage={data?.overallScore} />
             </div>
             <div className={`grid-item`} ref={globalFeedback}>
-              <p className="text-lg text-left text-white">
+              <p className="text-bsae text-left text-white">
                 {data?.overallFeedback}
               </p>
             </div>
@@ -113,7 +113,7 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
                       strokeWidth={7}
                       aria-hidden="true"
                     />
-                    <h2 className="text-lg font-bold text-white">
+                    <h2 className="text-base font-bold text-white">
                       {item.title}
                     </h2>
                   </div>
@@ -137,7 +137,7 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
                             }`}
                           >
                             {zone.title && (
-                              <h3 className="text-base font-bold text-white">
+                              <h3 className="text-sm font-bold text-white">
                                 {zone.title}
                               </h3>
                             )}
@@ -161,10 +161,10 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
             ref={solution}
           >
             {solutionVisible ? (
-              <p className="text-md">{data?.solution}</p>
+              <p className="text-base">{data?.solution}</p>
             ) : (
               <button
-                className="bg-black/20 p-4 rounded-lg text-white w-fit cursor-pointer"
+                className="bg-black/20 p-4 text-sm rounded-lg text-white w-fit cursor-pointer"
                 onClick={handleSolution}
                 ref={solutionButton}
                 aria-label="Voir la solution"
