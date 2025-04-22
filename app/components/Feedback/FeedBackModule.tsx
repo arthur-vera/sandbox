@@ -122,8 +122,8 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
                 children={
                   <div
                     className={`grid gap-4 ${
-                      item.zones.length === 2 ? "md:grid-cols-2" : ""
-                    } ${item.zones.length === 3 ? "md:grid-cols-3" : ""}`}
+                      item.zones.length === 2 ? "lg:grid-cols-2" : ""
+                    } ${item.zones.length === 3 ? "lg:grid-cols-3" : ""}`}
                     id={`accordion-panel-${index}`}
                     aria-labelledby={`accordion-header-${index}`}
                   >
