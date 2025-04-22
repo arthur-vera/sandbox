@@ -3,13 +3,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import CircularBar from "./Charts/ProgressBars/CircularBar";
 import Accordion from "../Accordion";
-import ProgressBar from "./Charts/ProgressBars/ProgressBar";
 import { FeedbackData, FeedbackDetail } from "@/app/types/feedback";
-import {
-  displaySolutionAnimation,
-  feedbackIntroAnimation,
-  fullFeedbackAnimation,
-} from "./animations";
+import { displaySolutionAnimation, fullFeedbackAnimation } from "./animations";
 import { FaEye } from "react-icons/fa";
 
 interface FeedBackModuleProps {
@@ -60,7 +55,7 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col bg-neutral-200 relative p-6">
+      <main className="min-h-screen flex flex-col bg-neutral-200 relative p-4 md:p-6">
         <div className="imgWrapper fixed top-0 left-0 w-screen h-screen">
           <img
             src="https://mypresquile.com/wp-content/uploads/2021/02/BOUTIQUE-HERMES-LYON-A4_BD-scaled.jpg"
@@ -86,7 +81,7 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
               {data.topic}
             </h1>
           </div>
-          <div className="flex items-center my-9 gap-6">
+          <div className="flex flex-col md:flex-row items-center my-9 gap-6">
             <div className={`grid-item`} ref={circularBar}>
               <CircularBar percentage={data?.overallScore} />
             </div>
@@ -102,19 +97,29 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
               <Accordion
                 key={index}
                 title={
-                  <div className="flex items-center gap-4">
+                  <div
+                    className="flex items-center gap-4"
+                    id={`accordion-header-${index}`}
+                    aria-expanded={false}
+                    aria-controls={`accordion-panel-${index}`}
+                  >
                     <CircularBar
                       percentage={item.score}
                       size={40}
                       strokeWidth={7}
+                      aria-hidden="true"
                     />
-                    <h3 className="text-lg font-bold text-white">
+                    <h2 className="text-lg font-bold text-white">
                       {item.title}
-                    </h3>
+                    </h2>
                   </div>
                 }
                 children={
-                  <div className="flex flex-col gap-4">
+                  <div
+                    className="flex flex-col gap-4"
+                    id={`accordion-panel-${index}`}
+                    aria-labelledby={`accordion-header-${index}`}
+                  >
                     <p className="text-lg">{item.comment}</p>
                   </div>
                 }
@@ -138,14 +143,15 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
                 className="bg-black/20 p-4 rounded-lg border border-white/10 text-white w-fit cursor-pointer"
                 onClick={handleSolution}
                 ref={solutionButton}
+                aria-label="Voir la solution"
               >
-                <FaEye className="inline-block mr-2" />
+                <FaEye className="inline-block mr-2" aria-hidden="true" />
                 <span>Voir la solution</span>
               </button>
             )}
           </div>
         </div>
-      </div>
+      </main>
     </>
   );
 };
