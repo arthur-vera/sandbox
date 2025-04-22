@@ -11,9 +11,9 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  --color-feedback-success: #779965;
+  --color-feedback-success: #769965;
   --color-feedback-success-rgba: "rgba(119, 153, 101, 0.1)";
-  --color-feedback-progress: #ffd738;
+  --color-feedback-progress: #ef7b53;
   --color-feedback-progress-rgba: "rgba(255, 215, 56, 0.1)";
   --color-feedback-dark: #1a1f2c;
   --color-feedback-darkgray: #2d3142;
@@ -35,7 +35,7 @@
   }
 
   .feedback-card-dark {
-    @apply rounded-xl bg-neutral-600/50 border-feedback-dark/30 border shadow-xl backdrop-blur-lg text-white;
+    @apply rounded-xl bg-neutral-600/50  shadow-xl backdrop-blur-lg text-white;
   }
 }
 

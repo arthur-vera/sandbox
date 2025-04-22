@@ -1,5 +1,5 @@
 export const data = {
-  overallScore: 40,
+  overallScore: 80,
   topic: "Analyse de la performance d'un modèle de machine learning",
   overallFeedback:
     "Votre travail est bien structuré et aborde le sujet de manière efficace. Cependant, il y a des domaines où vous pourriez améliorer votre approche. Par exemple, envisagez de fournir des explications plus détaillées pour votre raisonnement et d'inclure des exemples supplémentaires pour étayer vos points.",

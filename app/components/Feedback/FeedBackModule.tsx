@@ -6,6 +6,7 @@ import Accordion from "../Accordion";
 import { FeedbackData, FeedbackDetail } from "@/app/types/feedback";
 import { displaySolutionAnimation, fullFeedbackAnimation } from "./animations";
 import { FaEye } from "react-icons/fa";
+import ProgressBar from "@/app/components/Feedback/Charts/ProgressBars/ProgressBar";
 
 interface FeedBackModuleProps {
   data: FeedbackData;
@@ -70,7 +71,7 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
             visibility: "hidden",
           }}
         >
-          <div className="header border-b border-b-white/50 pb-9">
+          <div className="header  ">
             <h1 className="text-white text-3xl font-bold lg:w-[60%]">
               <span
                 className="block font-light text-lg text-white/50 mb-2
@@ -81,9 +82,13 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
               {data.topic}
             </h1>
           </div>
-          <div className="flex flex-col md:flex-row items-center my-9 gap-6">
+          <div
+            className="flex flex-col 
+           my-9 gap-6"
+          >
             <div className={`grid-item`} ref={circularBar}>
-              <CircularBar percentage={data?.overallScore} />
+              {/* <CircularBar percentage={data?.overallScore} /> */}
+              <ProgressBar percentage={data?.overallScore} />
             </div>
             <div className={`grid-item`} ref={globalFeedback}>
               <p className="text-lg text-left text-white">
@@ -120,7 +125,7 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
                     id={`accordion-panel-${index}`}
                     aria-labelledby={`accordion-header-${index}`}
                   >
-                    <p className="text-lg">{item.comment}</p>
+                    <p className="text-md">{item.comment}</p>
                   </div>
                 }
                 percentage={item.score}
