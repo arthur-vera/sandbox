@@ -3,95 +3,96 @@ import React from "react";
 
 const page = () => {
   const data = {
-    overallScore: 80,
-    topic: "Analyse de la performance d'un modèle de machine learning",
+    overallScore: 84,
+    topic: "Évaluation de la robustesse d’un modèle de classification",
     overallFeedback:
-      "Votre travail est bien structuré et aborde le sujet de manière efficace. Cependant, il y a des domaines où vous pourriez améliorer votre approche. Par exemple, envisagez de fournir des explications plus détaillées pour votre raisonnement et d'inclure des exemples supplémentaires pour étayer vos points.",
+      "Un bon travail global, avec une compréhension solide des concepts. Certaines interprétations gagneraient à être approfondies, notamment sur les biais possibles du dataset.",
     details: [
       {
-        title: "Understanding of the Topic",
-        score: 80,
-        zones: [
-          {
-            title: "Commentaire",
-            comment:
-              "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
-          },
-          {
-            title: "Conseils",
-            comment:
-              "Consider providing more detailed explanations for your reasoning and including additional examples to support your points.",
-          },
-          {
-            title: "Temps fort",
-            comment:
-              "Your work is well-structured and addresses the topic effectively",
-          },
-        ],
-      },
-      {
-        title: "Clarity of Communication, Structure and Style",
-        score: 70,
-        zones: [
-          {
-            title: "Zone 1",
-            comment:
-              "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
-          },
-          {
-            title: "Zone 2",
-            comment:
-              "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
-          },
-          {
-            title: "Zone 3",
-            comment:
-              "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
-          },
-        ],
-      },
-      {
-        title: "Examples and Evidence Provided",
-        score: 65,
+        title: "Compréhension du sujet",
+        score: 88,
         zones: [
           {
             title: "Points forts",
             comment:
-              "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+              "Bonne compréhension des enjeux liés à la précision, au rappel et au F1-score.",
           },
           {
-            title: "Points faibles",
+            title: "Conseils",
             comment:
-              "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+              "Développez davantage l’analyse des faiblesses du modèle pour montrer une vision critique.",
           },
         ],
       },
       {
-        title: "Critical Thinking and Analysis Skills",
-        score: 73,
+        title: "Clarté, structure et style",
+        score: 79,
+        zones: [
+          {
+            title: "Style",
+            comment:
+              "Langage clair et accessible. Quelques phrases peuvent être raccourcies pour plus d’impact.",
+          },
+          {
+            title: "",
+            comment:
+              "La structure est logique, mais la conclusion pourrait être plus marquante.",
+          },
+          {
+            title: "Orthographe et grammaire",
+            comment:
+              "Quelques fautes d’orthographe mineures, mais rien de rédhibitoire.",
+          },
+        ],
+      },
+      {
+        title: "Exemples et preuves",
+        score: 74,
+        zones: [
+          {
+            title: "Exemple principal",
+            comment:
+              "L’exemple sur les données de santé est pertinent, mais manque d’analyse comparative.",
+          },
+        ],
+      },
+      {
+        title: "Limites du dataset",
+        score: 80,
+        zones: [
+          {
+            title: "Analyse des biais",
+            comment:
+              "Une bonne mention des biais potentiels, mais il serait intéressant d’explorer des contre-exemples.",
+          },
+          {
+            title: "Suggestions d’amélioration",
+            comment:
+              "Proposer des solutions pour atténuer les biais identifiés serait un plus.",
+          },
+          {
+            title: "Conclusion",
+            comment:
+              "La conclusion est solide, mais pourrait être renforcée par des recommandations concrètes.",
+          },
+        ],
+      },
+      {
+        title: "Cohérence et documentation",
+        score: 85,
         zones: [
           {
             title: "",
             comment:
-              "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
-          },
-        ],
-      },
-      {
-        title: "Overall Impression",
-        score: 80,
-        zones: [
-          {
-            title: "Titre de la zone de commentaire",
-            comment:
-              "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+              "Le code est bien commenté, ce qui facilite la compréhension.",
           },
         ],
       },
     ],
     solution:
-      "The solution is well-structured and addresses the problem effectively. However, there are some areas where you could improve your approach. For example, consider providing more detailed explanations for your reasoning and including additional examples to support your points. Overall, a solid effort with room for enhancement.",
+      "Le travail est cohérent et bien documenté. Pour renforcer votre démonstration, vous pouvez ajouter des contre-exemples et discuter davantage des limites du dataset.",
   };
+
   return <FeedBackModule data={data} />;
 };
 

@@ -87,7 +87,6 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
            my-9 gap-6"
           >
             <div className={`grid-item`} ref={circularBar}>
-              {/* <CircularBar percentage={data?.overallScore} /> */}
               <ProgressBar percentage={data?.overallScore} />
             </div>
             <div className={`grid-item`} ref={globalFeedback}>
@@ -123,7 +122,7 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
                   <div
                     className={`grid gap-4 ${
                       item.zones.length === 2 ? "lg:grid-cols-2" : ""
-                    } ${item.zones.length === 3 ? "lg:grid-cols-3" : ""}`}
+                    } ${item.zones.length >= 3 ? "lg:grid-cols-3" : ""}`}
                     id={`accordion-panel-${index}`}
                     aria-labelledby={`accordion-header-${index}`}
                   >
