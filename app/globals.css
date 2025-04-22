@@ -11,10 +11,10 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  --color-feedback-success: #2d9200;
-  --color-feedback-success-rgba: "rgba(71, 173, 26, 0.5)";
-  --color-feedback-progress: #3b82f6;
-  --color-feedback-progress-rgba: "rgba(150, 196, 224, 0.5)";
+  --color-feedback-success: #779965;
+  --color-feedback-success-rgba: "rgba(119, 153, 101, 0.1)";
+  --color-feedback-progress: #ffd738;
+  --color-feedback-progress-rgba: "rgba(255, 215, 56, 0.1)";
   --color-feedback-dark: #1a1f2c;
   --color-feedback-darkgray: #2d3142;
   --color-feedback-lightgray: #667085;
@@ -32,6 +32,10 @@
 
   .feedback-card-neutral {
     @apply rounded-xl bg-gradient-to-r from-white/10 to-white/5 border-white/20 border shadow-xl backdrop-blur-lg text-white;
+  }
+
+  .feedback-card-dark {
+    @apply rounded-xl bg-neutral-600/50 border-feedback-dark/30 border shadow-xl backdrop-blur-lg text-white;
   }
 }
 

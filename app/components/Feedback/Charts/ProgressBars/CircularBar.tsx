@@ -36,10 +36,10 @@ const CircularBar = ({
   const getCircleStrokeColor = () => {
     if (percentage < targetScore) {
       setCircleStroke("var(--color-feedback-progress)");
-      setCircleStrokeBg("rgba(150, 196, 224, 0.5)");
+      setCircleStrokeBg("rgba(150, 196, 224, 0.2)");
     } else {
       setCircleStroke("var(--color-feedback-success)");
-      setCircleStrokeBg("rgba(140, 192, 132, 0.5)");
+      setCircleStrokeBg("rgba(140, 192, 132, 0.2)");
     }
   };
 
@@ -49,7 +49,7 @@ const CircularBar = ({
       gsap.to(circleRef.current, {
         strokeDashoffset: circumference - (percentage / 100) * circumference,
         duration: 2,
-        ease: "elastic.out(.5, 0.3)",
+        ease: "power2.out",
       });
     }
   }, [percentage, circumference]);

@@ -3,15 +3,17 @@ import React, { useState, useRef } from "react";
 import { FaChevronRight } from "react-icons/fa";
 
 interface AccordionProps {
-  title: string;
+  title: string | React.ReactNode;
   children: React.ReactNode;
   defaultOpen?: boolean;
+  percentage?: number;
 }
 
 const Accordion = ({
   title,
   children,
   defaultOpen = false,
+  percentage,
 }: AccordionProps) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -22,7 +24,9 @@ const Accordion = ({
 
   return (
     <div
-      className={`bg-black/20 p-4 rounded-lg border border-white/10 text-white`}
+      className={`bg-black/20 p-4 rounded-lg border border-white/10 text-white ${
+        percentage! >= 80 ? "feedback-card-success" : "feedback-card-progress"
+      }`}
     >
       <button
         onClick={handleToggle}

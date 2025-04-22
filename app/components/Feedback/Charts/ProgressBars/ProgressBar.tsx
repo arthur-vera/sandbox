@@ -11,7 +11,7 @@ interface ProgressBarProps {
 const ProgressBar = ({ percentage, targetScore = 80 }: ProgressBarProps) => {
   const progressBarRef = useRef<HTMLDivElement>(null);
   const [bgBar, setBgBar] = useState("bg-gray-500");
-  const [bgBarContainer, setBgBarContainer] = useState("bg-black-vup/70");
+  const [bgBarContainer, setBgBarContainer] = useState("bg-gray-200/10");
 
   const getBackgroundColor = () => {
     if (percentage < targetScore!) {

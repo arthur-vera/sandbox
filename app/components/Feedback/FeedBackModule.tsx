@@ -11,7 +11,6 @@ import {
   fullFeedbackAnimation,
 } from "./animations";
 import { FaEye } from "react-icons/fa";
-import { FaChevronDown } from "react-icons/fa";
 
 interface FeedBackModuleProps {
   data: FeedbackData;
@@ -22,11 +21,6 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
   const [validate, setValidate] = useState(data.overallScore >= targetScore);
   const [introDone, setIntroDone] = useState(false);
   const [solutionVisible, setSolutionVisible] = useState(false);
-
-  const intro = useRef<HTMLDivElement>(null);
-  const circularBarIntro = React.useRef<HTMLDivElement>(null);
-  const textIntro = useRef<HTMLParagraphElement>(null);
-  const grid = useRef<HTMLDivElement>(null);
 
   const globalWrapper = useRef<HTMLDivElement>(null);
   const title = useRef<HTMLHeadingElement>(null);
@@ -49,15 +43,7 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
   }, [data]);
 
   useEffect(() => {
-    feedbackIntroAnimation(
-      circularBarIntro.current as HTMLElement,
-
-      () => {
-        setTimeout(() => {
-          setIntroDone(true);
-        }, 2000);
-      }
-    );
+    setIntroDone(true);
   }, []);
 
   useEffect(() => {
@@ -74,91 +60,91 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col bg-black-vup relative">
-        {introDone ? (
+      <div className="min-h-screen flex flex-col bg-neutral-200 relative p-6">
+        <div className="imgWrapper fixed top-0 left-0 w-screen h-screen">
+          <img
+            src="https://mypresquile.com/wp-content/uploads/2021/02/BOUTIQUE-HERMES-LYON-A4_BD-scaled.jpg"
+            alt="boutique"
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          />
+        </div>
+        <div
+          className={`feedback-card-dark global-wrapper w-full max-w-[1000px] m-auto p-4 md:p-6`}
+          ref={globalWrapper}
+          style={{
+            visibility: "hidden",
+          }}
+        >
+          <div className="header border-b border-b-white/50 pb-9">
+            <h1 className="text-white text-3xl font-bold lg:w-[60%]">
+              <span
+                className="block font-light text-lg text-white/50 mb-2
+            "
+              >
+                Thématique de l'échange
+              </span>
+              {data.topic}
+            </h1>
+          </div>
+          <div className="flex items-center my-9 gap-6">
+            <div className={`grid-item`} ref={circularBar}>
+              <CircularBar percentage={data?.overallScore} />
+            </div>
+            <div className={`grid-item`} ref={globalFeedback}>
+              <p className="text-lg text-left text-white">
+                {data?.overallFeedback}
+              </p>
+            </div>
+          </div>
+
+          <div className={`flex flex-col gap-4 grid-item mb-6`}>
+            {data?.details?.map((item: FeedbackDetail, index: number) => (
+              <Accordion
+                key={index}
+                title={
+                  <div className="flex items-center gap-4">
+                    <CircularBar
+                      percentage={item.score}
+                      size={40}
+                      strokeWidth={7}
+                    />
+                    <h3 className="text-lg font-bold text-white">
+                      {item.title}
+                    </h3>
+                  </div>
+                }
+                children={
+                  <div className="flex flex-col gap-4">
+                    <p className="text-lg">{item.comment}</p>
+                  </div>
+                }
+                percentage={item.score}
+              />
+            ))}
+          </div>
+
           <div
             className={`${
-              validate ? "feedback-card-success" : "feedback-card-progress"
-            } global-wrapper w-full max-w-[1000px] m-auto p-6`}
-            ref={globalWrapper}
-            style={{
-              visibility: "hidden",
-            }}
+              solutionVisible
+                ? "bg-black/20 p-4 rounded-lg border border-white/10 text-white"
+                : "border border-dashed border-white p-6 rounded-lg flex justify-center items-center"
+            }`}
+            ref={solution}
           >
-            <h2 className="text-2xl font-bold mb-4 text-white" ref={title}>
-              Expliquer les facteurs influençant l'autonomie réelle d'un
-              véhicule
-            </h2>
-            <div className="gap-4" ref={grid}>
-              <div className="flex items-center my-6 gap-6">
-                <div className={`grid-item`} ref={circularBar}>
-                  <CircularBar percentage={data?.overallScore} />
-                  {/* <p>{data?.shortAppreciation}</p> */}
-                </div>
-                <div className={`grid-item`} ref={globalFeedback}>
-                  <p className="text-lg text-left text-white">
-                    {data?.overallFeedback}
-                  </p>
-                </div>
-              </div>
-
-              <div className={`flex flex-col gap-4 grid-item mb-6`}>
-                {data?.details?.map((item: FeedbackDetail, index: number) => (
-                  <Accordion
-                    key={index}
-                    title={item.title}
-                    children={
-                      <div className="flex flex-col gap-4">
-                        <ProgressBar percentage={item.score} />
-                        <p>{item.comment}</p>
-                      </div>
-                    }
-                  />
-                ))}
-              </div>
-
-              <div
-                className={`${
-                  solutionVisible
-                    ? "bg-black/20 p-4 rounded-lg border border-white/10 text-white"
-                    : "border border-dashed border-white p-6 rounded-lg flex justify-center items-center"
-                }`}
-                ref={solution}
+            {solutionVisible ? (
+              <p className="text-lg">{data?.solution}</p>
+            ) : (
+              <button
+                className="bg-black/20 p-4 rounded-lg border border-white/10 text-white w-fit cursor-pointer"
+                onClick={handleSolution}
+                ref={solutionButton}
               >
-                {solutionVisible ? (
-                  data?.solution
-                ) : (
-                  <button
-                    className="bg-black/20 p-4 rounded-lg border border-white/10 text-white w-fit cursor-pointer"
-                    onClick={handleSolution}
-                    ref={solutionButton}
-                  >
-                    <FaEye className="inline-block mr-2" />
-                    <span>Voir la solution</span>
-                  </button>
-                )}
-              </div>
-            </div>
+                <FaEye className="inline-block mr-2" />
+                <span>Voir la solution</span>
+              </button>
+            )}
           </div>
-        ) : (
-          <div
-            className="intro h-screen max-h-screen flex flex-col items-center justify-center"
-            ref={intro}
-          >
-            <div className="" ref={circularBarIntro}>
-              <div
-                className={`halo w-[30vw] aspect-square rounded-full  absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 blur-3xl opacity-20 bg-black ${
-                  validate ? "bg-feedback-success" : "bg-feedback-progress"
-                }`}
-              ></div>
-              <CircularBar
-                percentage={data?.overallScore}
-                size={300}
-                strokeWidth={60}
-              />
-            </div>
-          </div>
-        )}
+        </div>
       </div>
     </>
   );
