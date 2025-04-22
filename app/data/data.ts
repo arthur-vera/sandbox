@@ -7,26 +7,86 @@ export const data = {
     {
       title: "Understanding of the Topic",
       score: 80,
-      comment:
-        "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+      zones: [
+        {
+          title: "Commentaire",
+          comment:
+            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+        },
+        {
+          title: "Conseils",
+          comment:
+            "Consider providing more detailed explanations for your reasoning and including additional examples to support your points.",
+        },
+        {
+          title: "Temps fort",
+          comment:
+            "Your work is well-structured and addresses the topic effectively",
+        },
+      ],
     },
     {
       title: "Clarity of Communication, Structure and Style",
       score: 70,
-      comment:
-        "Your communication is mostly clear, but some parts could be phrased more effectively. Consider revising for clarity and conciseness.",
+      zones: [
+        {
+          title: "Zone 1",
+          comment:
+            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+        },
+        {
+          title: "Zone 2",
+          comment:
+            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+        },
+        {
+          title: "Zone 3",
+          comment:
+            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+        },
+      ],
     },
     {
       title: "Examples and Evidence Provided",
       score: 65,
-      comment:
-        "Your examples are mostly relevant, though a few could be stronger or more specific. Try to include more concrete examples to support your arguments.",
+      zones: [
+        {
+          title: "Zone 1",
+          comment:
+            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+        },
+        {
+          title: "Zone 2",
+          comment:
+            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+        },
+        {
+          title: "Zone 3",
+          comment:
+            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+        },
+      ],
     },
     {
       title: "Critical Thinking and Analysis Skills",
       score: 73,
-      comment:
-        "Good analysis overall, but there's room to deepen your arguments further. Consider exploring counterarguments or alternative perspectives. This will strengthen your analysis and show a more comprehensive understanding of the topic.",
+      zones: [
+        {
+          title: "Zone 1",
+          comment:
+            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+        },
+        {
+          title: "Zone 2",
+          comment:
+            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+        },
+        {
+          title: "Zone 3",
+          comment:
+            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+        },
+      ],
     },
   ],
   solution:

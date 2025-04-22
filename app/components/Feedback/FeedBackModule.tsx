@@ -121,11 +121,31 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
                 }
                 children={
                   <div
-                    className="grid gap-4"
+                    className={`grid gap-4 ${
+                      item.zones.length === 2 ? "md:grid-cols-2" : ""
+                    } ${item.zones.length === 3 ? "md:grid-cols-3" : ""}`}
                     id={`accordion-panel-${index}`}
                     aria-labelledby={`accordion-header-${index}`}
                   >
-                    <p className="text-md">{item.comment}</p>
+                    {item.zones.map(
+                      (zone, zoneIndex) =>
+                        zone.comment && (
+                          <div
+                            key={zoneIndex}
+                            className={`flex flex-col gap-2  ${
+                              item.zones.length > 1 &&
+                              "bg-white/10 p-4 rounded-lg"
+                            }`}
+                          >
+                            {zone.title && (
+                              <h3 className="text-base font-bold text-white">
+                                {zone.title}
+                              </h3>
+                            )}
+                            <p className="text-sm text-white">{zone.comment}</p>
+                          </div>
+                        )
+                    )}
                   </div>
                 }
                 percentage={item.score}

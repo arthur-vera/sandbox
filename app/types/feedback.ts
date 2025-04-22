@@ -1,7 +1,11 @@
 export interface FeedbackDetail {
   title: string;
   score: number;
-  comment: string;
+
+  zones: {
+    title: string;
+    comment: string;
+  }[];
 }
 
 export interface FeedbackData {
