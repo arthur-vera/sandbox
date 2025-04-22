@@ -40,26 +40,27 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen gap-4">
-      <Link href={"/feedback-module"} className="cursor-pointer">
-        <button className="bg-blue-500 text-white p-2 rounded w-fit">
+      <h1 className="text-3xl font-bold">Feedback Module</h1>
+      <Link href={"/feedback-module"}>
+        <button className="bg-blue-500 text-white p-2 rounded w-fit cursor-pointer hover:bg-blue-600 transition duration-300">
           Feedback module final
         </button>
       </Link>
 
-      <Link href={"/charts-list"} className="cursor-pointer">
-        <button className="bg-blue-500 text-white p-2 rounded w-fit">
+      <Link href={"/charts-list"}>
+        <button className="bg-blue-500 text-white p-2 rounded w-fit cursor-pointer hover:bg-blue-600 transition duration-300">
           Charts list
         </button>
       </Link>
 
-      <Link href={"/feedback-module-plus"} className="cursor-pointer">
-        <button className="bg-blue-500 text-white p-2 rounded w-fit">
+      <Link href={"/feedback-module-plus"}>
+        <button className="bg-blue-500 text-white p-2 rounded w-fit cursor-pointer hover:bg-blue-600 transition duration-300">
           Feedback scroll animation
         </button>
       </Link>
 
-      <Link href={"/grid-version"} className="cursor-pointer">
-        <button className="bg-blue-500 text-white p-2 rounded w-fit">
+      <Link href={"/grid-version"}>
+        <button className="bg-blue-500 text-white p-2 rounded w-fit cursor-pointer hover:bg-blue-600 transition duration-300">
           Feedback grid version
         </button>
       </Link>
