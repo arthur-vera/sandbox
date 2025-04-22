@@ -121,7 +121,7 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
                 }
                 children={
                   <div
-                    className="flex flex-col gap-4"
+                    className="grid  gap-4"
                     id={`accordion-panel-${index}`}
                     aria-labelledby={`accordion-header-${index}`}
                   >
@@ -136,16 +136,16 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
           <div
             className={`${
               solutionVisible
-                ? "bg-black/20 p-4 rounded-lg border border-white/10 text-white"
-                : "border border-dashed border-white p-6 rounded-lg flex justify-center items-center"
+                ? "bg-black/20 p-6 rounded-lg border border-white/10 text-white"
+                : "bg-white/10 p-6 rounded-lg flex justify-center items-center"
             }`}
             ref={solution}
           >
             {solutionVisible ? (
-              <p className="text-lg">{data?.solution}</p>
+              <p className="text-md">{data?.solution}</p>
             ) : (
               <button
-                className="bg-black/20 p-4 rounded-lg border border-white/10 text-white w-fit cursor-pointer"
+                className="bg-black/20 p-4 rounded-lg text-white w-fit cursor-pointer"
                 onClick={handleSolution}
                 ref={solutionButton}
                 aria-label="Voir la solution"

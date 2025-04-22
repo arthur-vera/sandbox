@@ -30,7 +30,7 @@ const ProgressBar = ({ percentage, targetScore = 80 }: ProgressBarProps) => {
         tl.to(progressBarRef.current, {
           scaleX: percentage / 100,
           duration: 2,
-          ease: "elastic.out(.5, 0.3)",
+          ease: "power2.out",
           transformOrigin: "left",
           onStart: () => {
             getBackgroundColor();
