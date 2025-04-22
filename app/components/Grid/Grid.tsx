@@ -20,7 +20,12 @@ export const GridItem = ({ content }: GridItemProps) => {
         <div className="flex flex-col gap-8 justify-between h-full">
           <div className="flex flex-col gap-4">
             <p className="font-bold uppercase">{content.title}</p>
-            <p className="font-light">{content.comment}</p>
+            {content.zones.map((zone, index) => (
+              <div key={index} className="flex flex-col gap-2">
+                <p className="text-sm font-bold">{zone.title}</p>
+                <p className="text-sm">{zone.comment}</p>
+              </div>
+            ))}
           </div>
           <ProgressBar percentage={content.score} />
         </div>

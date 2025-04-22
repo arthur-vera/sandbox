@@ -55,7 +55,12 @@ export const SliderCard = ({ content }: SliderCardProps) => {
             <p className="text-lg lg:text-2xl uppercase font-bold mb-2 md:mb-4">
               {content.title}
             </p>
-            <p className="text-sm lg:text-lg mb-6">{content.comment}</p>
+            {content.zones.map((zone, index) => (
+              <div key={index} className="flex flex-col gap-2">
+                <p className="text-sm font-bold">{zone.title}</p>
+                <p className="text-sm">{zone.comment}</p>
+              </div>
+            ))}
             <ProgressBar percentage={content.score} />
           </div>
         </div>
