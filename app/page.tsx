@@ -39,9 +39,30 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col">
-      <Link href={"/charts-list"}>Chart list</Link>
-      <Link href={"/feedback-module-plus"}>Scrool version</Link>
+    <div className="flex flex-col items-center justify-center h-screen gap-4">
+      <Link href={"/feedback-module"} className="cursor-pointer">
+        <button className="bg-blue-500 text-white p-2 rounded w-fit">
+          Feedback module final
+        </button>
+      </Link>
+
+      <Link href={"/charts-list"} className="cursor-pointer">
+        <button className="bg-blue-500 text-white p-2 rounded w-fit">
+          Charts list
+        </button>
+      </Link>
+
+      <Link href={"/feedback-module-plus"} className="cursor-pointer">
+        <button className="bg-blue-500 text-white p-2 rounded w-fit">
+          Feedback scroll animation
+        </button>
+      </Link>
+
+      <Link href={"/grid-version"} className="cursor-pointer">
+        <button className="bg-blue-500 text-white p-2 rounded w-fit">
+          Feedback grid version
+        </button>
+      </Link>
     </div>
   );
 }
