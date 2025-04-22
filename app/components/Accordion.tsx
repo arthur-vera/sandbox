@@ -24,7 +24,7 @@ const Accordion = ({
 
   return (
     <div
-      className={`bg-black/20 p-2 rounded-lg border border-white/10 text-white ${
+      className={`bg-black/20 p-3 rounded-lg border border-white/10 text-white ${
         percentage! >= 80 ? "feedback-card-success" : "feedback-card-progress"
       }`}
     >
@@ -47,7 +47,7 @@ const Accordion = ({
           maxHeight: isOpen ? `${contentRef.current?.scrollHeight}px` : "0px",
         }}
       >
-        <div className="p-2">{children}</div>
+        <div className="p-4">{children}</div>
       </div>
     </div>
   );
