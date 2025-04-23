@@ -23,6 +23,7 @@ const page = () => {
               "Développez davantage l’analyse des faiblesses du modèle pour montrer une vision critique.",
           },
         ],
+        average: 85,
       },
       {
         title: "Clarté, structure et style",
@@ -44,6 +45,7 @@ const page = () => {
               "Quelques fautes d’orthographe mineures, mais rien de rédhibitoire.",
           },
         ],
+        average: 80,
       },
       {
         title: "Exemples et preuves",
@@ -55,6 +57,7 @@ const page = () => {
               "L’exemple sur les données de santé est pertinent, mais manque d’analyse comparative.",
           },
         ],
+        average: 75,
       },
       {
         title: "Limites du dataset",
@@ -76,6 +79,7 @@ const page = () => {
               "La conclusion est solide, mais pourrait être renforcée par des recommandations concrètes.",
           },
         ],
+        average: 80,
       },
       {
         title: "Cohérence et documentation",
@@ -87,6 +91,7 @@ const page = () => {
               "Le code est bien commenté, ce qui facilite la compréhension.",
           },
         ],
+        average: 20,
       },
     ],
     solution:

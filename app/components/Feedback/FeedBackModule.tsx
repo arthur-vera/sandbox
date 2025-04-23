@@ -148,6 +148,7 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
                   </div>
                 }
                 percentage={item.score}
+                average={item.average}
               />
             ))}
           </div>
