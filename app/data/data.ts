@@ -1,94 +1,95 @@
 export const data = {
-  overallScore: 80,
-  topic: "Analyse de la performance d'un modèle de machine learning",
+  overallScore: 84,
+  topic: "Évaluation de la robustesse d’un modèle de classification",
   overallFeedback:
-    "Votre travail est bien structuré et aborde le sujet de manière efficace. Cependant, il y a des domaines où vous pourriez améliorer votre approche. Par exemple, envisagez de fournir des explications plus détaillées pour votre raisonnement et d'inclure des exemples supplémentaires pour étayer vos points.",
+    "Un bon travail global, avec une compréhension solide des concepts. Certaines interprétations gagneraient à être approfondies, notamment sur les biais possibles du dataset.",
   details: [
     {
-      title: "Understanding of the Topic",
-      score: 80,
+      title: "Compréhension du sujet",
+      score: 88,
       zones: [
         {
-          title: "Commentaire",
+          title: "Points forts",
           comment:
-            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+            "Bonne compréhension des enjeux liés à la précision, au rappel et au F1-score.",
         },
         {
           title: "Conseils",
           comment:
-            "Consider providing more detailed explanations for your reasoning and including additional examples to support your points.",
-        },
-        {
-          title: "Temps fort",
-          comment:
-            "Your work is well-structured and addresses the topic effectively",
+            "Développez davantage l’analyse des faiblesses du modèle pour montrer une vision critique.",
         },
       ],
+      average: 85,
     },
     {
-      title: "Clarity of Communication, Structure and Style",
-      score: 70,
+      title: "Clarté, structure et style",
+      score: 79,
       zones: [
         {
-          title: "Zone 1",
+          title: "Style",
           comment:
-            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+            "Langage clair et accessible. Quelques phrases peuvent être raccourcies pour plus d’impact.",
         },
         {
-          title: "Zone 2",
+          title: "",
           comment:
-            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+            "La structure est logique, mais la conclusion pourrait être plus marquante.",
         },
         {
-          title: "Zone 3",
+          title: "Orthographe et grammaire",
           comment:
-            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+            "Quelques fautes d’orthographe mineures, mais rien de rédhibitoire.",
         },
       ],
+      average: 80,
     },
     {
-      title: "Examples and Evidence Provided",
-      score: 65,
+      title: "Exemples et preuves",
+      score: 74,
       zones: [
         {
-          title: "Zone 1",
+          title: "Exemple principal",
           comment:
-            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
-        },
-        {
-          title: "Zone 2",
-          comment:
-            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
-        },
-        {
-          title: "Zone 3",
-          comment:
-            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+            "L’exemple sur les données de santé est pertinent, mais manque d’analyse comparative.",
         },
       ],
+      average: 75,
     },
     {
-      title: "Critical Thinking and Analysis Skills",
-      score: 73,
+      title: "Limites du dataset",
+      score: 80,
       zones: [
         {
-          title: "Zone 1",
+          title: "Analyse des biais",
           comment:
-            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+            "Une bonne mention des biais potentiels, mais il serait intéressant d’explorer des contre-exemples.",
         },
         {
-          title: "Zone 2",
+          title: "Suggestions d’amélioration",
           comment:
-            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+            "Proposer des solutions pour atténuer les biais identifiés serait un plus.",
         },
         {
-          title: "Zone 3",
+          title: "Conclusion",
           comment:
-            "You clearly identified the key points and showed a good grasp of the topic. However, there are some areas where you could provide more depth.",
+            "La conclusion est solide, mais pourrait être renforcée par des recommandations concrètes.",
         },
       ],
+      average: 80,
+    },
+    {
+      title: "Cohérence et documentation",
+      score: 85,
+      zones: [
+        {
+          title: "",
+          comment:
+            "Le code est bien commenté, ce qui facilite la compréhension.",
+        },
+      ],
+      average: 20,
     },
   ],
   solution:
-    "The solution is well-structured and addresses the problem effectively. However, there are some areas where you could improve your approach. For example, consider providing more detailed explanations for your reasoning and including additional examples to support your points. Overall, a solid effort with room for enhancement.",
+    "Le travail est cohérent et bien documenté. Pour renforcer votre démonstration, vous pouvez ajouter des contre-exemples et discuter davantage des limites du dataset.",
 };
