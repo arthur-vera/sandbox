@@ -8,6 +8,7 @@ interface CircularBarProps {
   size?: number;
   strokeWidth?: number;
   targetScore?: number;
+  score?: number;
 }
 
 const CircularBar = ({

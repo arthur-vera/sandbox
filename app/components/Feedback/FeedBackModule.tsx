@@ -100,24 +100,8 @@ const FeedBackModule = ({ data }: FeedBackModuleProps) => {
             {data?.details?.map((item: FeedbackDetail, index: number) => (
               <Accordion
                 key={index}
-                title={
-                  <div
-                    className="flex items-center gap-4"
-                    id={`accordion-header-${index}`}
-                    aria-expanded={false}
-                    aria-controls={`accordion-panel-${index}`}
-                  >
-                    <CircularBar
-                      percentage={item.score}
-                      size={40}
-                      strokeWidth={7}
-                      aria-hidden="true"
-                    />
-                    <h2 className="text-base font-bold text-white">
-                      {item.title}
-                    </h2>
-                  </div>
-                }
+                title={item.title}
+                score={item.score}
                 children={
                   <div
                     className={`grid gap-4 ${
